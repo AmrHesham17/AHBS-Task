@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <app-navbar></app-navbar>
+            <div class="row">
+                <app-sidebar></app-sidebar>
+                <div class="col-lg-12">
+                    <div class="row employee_container">
+                        <main role="main" class=" col-lg-12">
+                            <div class="tabs_container nav-tabs">
+                                <div class="container">
+                                    <ul class="list-group mt-0 list-group-horizontal">
+                                        <li class="pr-2 nav-item">
+                                            <a class="nav-link" [routerLink]="['/add-employee']"
+                                                routerLinkActive="active">Add Employee
+                                            </a>
+                                        </li>
+                                        <li class="pr-2 nav-item">
+                                            <a class="nav-link" [routerLink]="['/search-employee']"
+                                                routerLinkActive="active">Search Employee
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row employee">
+                                <div class="container">
+                                    <div class="employee-container">
+                                        <router-outlet></router-outlet>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                        <app-footer></app-footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

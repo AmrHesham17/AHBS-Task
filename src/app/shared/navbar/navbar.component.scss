@@ -1,0 +1,46 @@
+$primaryColor: #9376f7;
+$secondaryColor: #4015d0;
+$bodyColor: #FFF;
+$thirdColor: #ff00de;
+$forthColor: #ff0078;
+
+.top__navbar {
+    background: linear-gradient(90deg,$primaryColor,$secondaryColor);
+    color: $bodyColor;
+
+    .logo {
+        font-weight: 600;
+        color: $bodyColor;
+        font-size: 25px;
+    }
+
+    .user__account {
+        background: linear-gradient(45deg,$thirdColor,$forthColor);
+        box-shadow: 0 4px 17px 3px rgba(72,31,210,.1);
+    }
+
+    .user__avatar {
+        width: 40px;
+        border-radius: 50%;
+        margin-right: 15px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .user__avatar:hover {
+        opacity: 0.8;
+    }
+
+    .date {
+        color: $bodyColor;
+        font-weight: 800;
+    }
+}
+  
+@media (min-width: 767.98px) {
+    .navbar {
+      top: 0;
+      position: sticky;
+      z-index: 999;
+    }
+}

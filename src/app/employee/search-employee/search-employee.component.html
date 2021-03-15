@@ -1,0 +1,73 @@
+<div *ngIf="this.allEmployees.length == 0;" class="search-employee_no-data">
+
+    <div class="search_employee_no-data_paragraph">
+        <p>No employee, please Insert a New One!</p>
+    </div>
+    <div class="search_employee_no-data_create-new">
+        <button class="btn  btn-primary" routerLink="/add-employee">
+            Add Employee
+        </button> 
+    </div>
+</div>
+
+<section class="search-employee-wrapper" *ngIf="this.allEmployees.length != 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form [formGroup]="EmpSearchForm" (ngSubmit)="search(EmpSearchForm)">
+                    <div class="row align-items-center">
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="EmployeeName">Employee Name</label>
+                                <input formControlName="EmployeeName" type="text" class="form-control" id="EmployeeName"
+                                    placeholder="Name" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="departmentemp">Department</label>
+                                <select formControlName="department" class="custom-select d-block w-100"
+                                    id="departmentemp" required>
+                                    <option selected>Choose Department</option>
+                                    <option value="Markting">Markting</option>
+                                    <option value="Design">Design</option>
+                                    <option value="HR">HR</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 button_search">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-10">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" (click)="CheckAllOptions($event.target.checked)"></th>
+                            <th>Employee Code</th>
+                            <th>Employee Name</th>
+                            <th>Department</th>
+                            <th>Gender</th>
+                            <th>Birthday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let employee of allEmployees">
+                            <td><input type="checkbox" [checked]="employee.checked"></td>
+                            <th>{{ employee.code }}</th>
+                            <td>{{ employee.name }} </td>
+                            <td>{{ employee.department }}</td>
+                            <td>{{ employee.Gender }}</td>
+                            <td>{{ employee.birthday }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

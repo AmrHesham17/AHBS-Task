@@ -1,0 +1,24 @@
+.button_search{
+    margin-top: 15px;
+}
+.search_employee_no-data{
+  text-align: center;
+    padding-right: 22%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 67vh;
+    &_icon {
+      font-size: 150px;
+      color: red;
+    }
+    &_create-new {
+      width: 30%;
+      
+    }
+    &_paragraph {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
